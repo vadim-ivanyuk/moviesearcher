@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort snap Sort 1`] = `
+<div
+  class="sort form-group"
+>
+  <label
+    class="filters-label"
+    for="sort_by"
+  >
+    Сортировать
+  </label>
+  <select
+    class="form-control cursor-pointer"
+    id="sort_by"
+    name="sort_by"
+  >
+    <option
+      value="popularity.desc"
+    >
+      Популярные (убывание)
+    </option>
+    <option
+      value="popularity.asc"
+    >
+      Популярные (возростание)
+    </option>
+    <option
+      value="vote_average.desc"
+    >
+      Рейтинг (убывание)
+    </option>
+    <option
+      value="vote_average.asc"
+    >
+      Рейтинг (возростание)
+    </option>
+  </select>
+</div>
+`;

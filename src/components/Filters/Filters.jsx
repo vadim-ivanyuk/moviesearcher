@@ -1,15 +1,15 @@
 import React from "react";
-import { Sort } from "./Sort";
-import { Pagination } from "./Pagination";
-import { ReleaseYear } from "./ReleaseYear";
-import { GenresList } from "./Genres/GenresList";
-import { ResetFilters } from "./ResetFilters";
+import { Sort } from "../Sort";
+import { Pagination } from "../Pagination";
+import { ReleaseYear } from "../ReleaseYear";
+import { GenresList } from "../Genres";
+import { ResetFilters } from "../ResetFilters";
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+};
 
 export const Filters = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <div className="filters">
       <form onSubmit={handleSubmit}>

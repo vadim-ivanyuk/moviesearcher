@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination first render snap 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Pagination>
+    <div
+      className="pagination form-group col-12 d-flex justify-content-center p-0"
+    >
+      <button
+        className="btn btn-light col-4"
+        disabled={true}
+        onClick={[Function]}
+        type="button"
+      >
+        Назад
+      </button>
+      <div
+        className="col-4 total-pages d-flex align-items-center justify-content-center p-0"
+      >
+        1 из 500
+      </div>
+      <button
+        className="btn btn-light col-4"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Вперед
+      </button>
+    </div>
+  </Pagination>
+</Provider>
+`;
+
+exports[`Pagination last render snap 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Pagination>
+    <div
+      className="pagination form-group col-12 d-flex justify-content-center p-0"
+    >
+      <button
+        className="btn btn-light col-4"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Назад
+      </button>
+      <div
+        className="col-4 total-pages d-flex align-items-center justify-content-center p-0"
+      >
+        10 из 500
+      </div>
+      <button
+        className="btn btn-light col-4"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Вперед
+      </button>
+    </div>
+  </Pagination>
+</Provider>
+`;

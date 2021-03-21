@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import queryString from "query-string";
 import { API_URL, API_KEY_MOVIE_DB_V3 } from "../../utils/apies";
 import { MovieItem } from "./MovieItem";
+import { Loader } from "../../elements/Loader";
+
+const getMoviesParams = (params) => ({
+  api_key: API_KEY_MOVIE_DB_V3,
+  language: params.language,
+  sort_by: params.sort_by,
+  primary_release_year: params.primary_release_year,
+  with_genres: params.with_genres,
+  page: params.page,
+});
 
 export const MoviesList = () => {
   const [movies, setMovies] = useState([]);
@@ -11,7 +22,9 @@ export const MoviesList = () => {
   useEffect(() => {
     axios
       .get(
-        `${API_URL}/discover/movie?api_key=${API_KEY_MOVIE_DB_V3}&language=${filters.language}&sort_by=${filters.sort_by}&primary_release_year=${filters.primary_release_year}&with_genres=${filters.with_genres}&page=${filters.page}`
+        `${API_URL}/discover/movie?${queryString.stringify(
+          getMoviesParams(filters)
+        )}`
       )
       .then(({ data }) => {
         setMovies(data.results);
@@ -27,9 +40,11 @@ export const MoviesList = () => {
 
   return (
     <div className="movies-container d-flex flex-wrap justify-content-center align-items-center">
-      {movies.map((movie) => (
-        <MovieItem movie={movie} key={movie.id} />
-      ))}
+      {movies.length ? (
+        movies.map((movie) => <MovieItem movie={movie} key={movie.id} />)
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

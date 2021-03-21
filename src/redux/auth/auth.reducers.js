@@ -8,7 +8,6 @@ const initialState = {
   },
   isAuth: false,
   session_id: cookies.get("session_id") || null,
-  account_id: cookies.get("account_id") || null,
 };
 
 export const authReducer = handleActions(

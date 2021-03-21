@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviePage first render snapshot 1`] = `
+<div>
+  <MoviePageHeader
+    movie={Object {}}
+  />
+  <MoviePageTrailers />
+</div>
+`;
