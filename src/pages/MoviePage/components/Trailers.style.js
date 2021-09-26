@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../theme";
 
-export const TrailersTitle = styled.h2`
-  width: 100%;
-  margin: 15px 0px;
-  font-size: 30px;
-`;
-
 export const FlexWrapper = styled.div`
   display: flex;
 

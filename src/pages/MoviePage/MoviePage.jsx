@@ -4,9 +4,11 @@ import axios from "axios";
 
 import { API_URL, API_KEY_MOVIE_DB_V3 } from "../../utils/apies";
 
-import { MoviePageHeader } from "./components/MoviePageHeader";
-import { MoviePageTrailers } from "./components/MoviePageTrailers";
-import { MoviePageActors } from "./components/MoviePageActors";
+import { MovieInfo } from "./components/MovieInfo";
+import { Trailers } from "./components/Trailers";
+import { MoreInfo } from "./components/MoreInfo";
+import { Actors } from "./components/Actors";
+import { Reviews } from "./components/Reviews";
 
 import { MoviePageWrapper, MoviePageContainer } from "./MoviePage.style";
 
@@ -31,11 +33,17 @@ export const MoviePage = (props) => {
 
   return (
     <>
-      <MoviePageHeader movie={movie} />
+      <MovieInfo movie={movie} />
       <MoviePageWrapper>
         <MoviePageContainer>
-          <MoviePageTrailers movie_id={movie.id} />
-          <MoviePageActors movie_id={movie.id} />
+          <Trailers movie_id={movie.id} />
+        </MoviePageContainer>
+      </MoviePageWrapper>
+      <MoreInfo movie={movie} />
+      <MoviePageWrapper>
+        <MoviePageContainer>
+          <Actors movie_id={movie.id} />
+          <Reviews movie_id={movie.id} />
         </MoviePageContainer>
       </MoviePageWrapper>
     </>

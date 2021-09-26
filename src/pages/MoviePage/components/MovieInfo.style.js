@@ -1,15 +1,16 @@
 import styled from "styled-components";
+
 import { theme } from "../../../theme";
 import { addBorderForVoteAvarage } from "../../../utils/helpers";
 
-export const MovieHeader = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: auto;
   color: ${theme.colorWhite};
 `;
 
-export const MovieHeaderBackground = styled.div`
+export const Background = styled.div`
   position: relative;
   background-image: linear-gradient(
     90deg,
@@ -19,7 +20,7 @@ export const MovieHeaderBackground = styled.div`
   text-align: right;
 `;
 
-export const MovieHeaderBackgroundImage = styled.img`
+export const BackgroundImage = styled.img`
   position: relative;
   object-fit: cover;
   width: 80%;
@@ -31,14 +32,14 @@ export const MovieHeaderBackgroundImage = styled.img`
   }
 `;
 
-export const MovieHeaderSingleBlock = styled.div`
+export const SingleBlock = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
 `;
 
-export const MovieHeaderContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -49,7 +50,7 @@ export const MovieHeaderContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const MovieHeaderPoster = styled.div`
+export const Poster = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,18 +70,18 @@ export const MovieHeaderPoster = styled.div`
   }
 `;
 
-export const MovieHeaderPosterImage = styled.img`
+export const PosterImage = styled.img`
   width: 290px;
   height: 435px;
   border-radius: 5px;
+  object-fit: cover;
 
   @media (max-width: 350px) {
     width: 100%;
-    object-fit: cover;
   }
 `;
 
-export const MovieHeaderDescription = styled.div`
+export const Description = styled.div`
   width: calc(100% - 380px);
   max-width: 760px;
   min-width: 450px;
@@ -99,7 +100,7 @@ export const MovieHeaderDescription = styled.div`
   }
 `;
 
-export const MovieHeaderTitle = styled.h2`
+export const Title = styled.h2`
   margin: 0px;
   font-size: 30px;
   white-space: nowrap;
@@ -111,7 +112,7 @@ export const MovieHeaderTitle = styled.h2`
   }
 `;
 
-export const MovieHeaderTagLine = styled.p`
+export const TagLine = styled.p`
   font-size: 1em;
   font-weight: 400;
   font-style: italic;
@@ -122,12 +123,12 @@ export const MovieHeaderTagLine = styled.p`
   text-overflow: ellipsis;
 `;
 
-export const MovieHeaderVoteAvarageContainer = styled.div`
+export const VoteAvarageContainer = styled.div`
   display: flex;
   margin: 16px 0px;
 `;
 
-export const MovieHeaderVoteAvarage = styled.p`
+export const VoteAvarage = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,21 +142,21 @@ export const MovieHeaderVoteAvarage = styled.p`
   margin: 0px;
 `;
 
-export const MovieHeaderVoteAvarageText = styled.p`
+export const VoteAvarageText = styled.p`
   margin: 0px;
   padding-left: 11px;
   line-height: 18px;
 `;
 
-export const MovieHeaderParagraph = styled.p`
+export const Paragraph = styled.p`
   margin-bottom: 0.5px;
 `;
 
-export const MovieHeaderBoldTest = styled.span`
+export const BoldText = styled.span`
   font-weight: bold;
 `;
 
-export const MovieHeaderOverviewTitle = styled.h4`
+export const OverviewTitle = styled.h4`
   margin-top: 18px;
   margin-bottom: 2px;
   font-size: 23px;
@@ -166,7 +167,7 @@ export const MovieHeaderOverviewTitle = styled.h4`
   }
 `;
 
-export const MovieHeaderOverview = styled.div`
+export const Overview = styled.div`
   width: 97%;
   padding-right: 5px;
   margin-bottom: 0px;

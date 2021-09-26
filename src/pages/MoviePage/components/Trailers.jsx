@@ -9,10 +9,10 @@ import {
   API_KEY_MOVIE_DB_V3,
 } from "../../../utils/apies";
 
+import { Title } from "../../../elements";
 import { Player } from "./Player";
 
 import {
-  TrailersTitle,
   FlexWrapper,
   CurrentTrailerWrapper,
   TrailersList,
@@ -20,9 +20,9 @@ import {
   IframeListItem,
   IrameListItemOverBlock,
   LoadMore,
-} from "./MoviePageTrailers.style";
+} from "./Trailers.style";
 
-export const MoviePageTrailers = ({ movie_id }) => {
+export const Trailers = ({ movie_id }) => {
   const [trailers, setTrailers] = useState([]);
   const [activeTrailer, setActiveTrailer] = useState(0);
   const [availableTrailers, setavailableTrailers] = useState(4);
@@ -91,7 +91,7 @@ export const MoviePageTrailers = ({ movie_id }) => {
     <>
       {trailers.length > 0 && (
         <>
-          <TrailersTitle>Trailers</TrailersTitle>
+          <Title title="Trailers"></Title>
           <FlexWrapper>
             <CurrentTrailerWrapper trailersLength={trailers.length}>
               {currentTrailer}
@@ -113,6 +113,6 @@ export const MoviePageTrailers = ({ movie_id }) => {
   );
 };
 
-MoviePageTrailers.propTypes = {
+Trailers.propTypes = {
   movie_id: PropTypes.number,
 };

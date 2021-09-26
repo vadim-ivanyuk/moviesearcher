@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 import axios from "axios";
 import { Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,23 +14,23 @@ import {
   API_KEY_MOVIE_DB_V3,
   API_IMG_URL,
 } from "../../../utils/apies";
+import { Title } from "../../../elements";
 import { defaultPoster } from "../../../img";
 
 import {
-  ActorsTitle,
-  ActorsWrapper,
-  ActorCotainer,
-  ActorImage,
+  Wrapper,
+  Cotainer,
+  Image,
   FillingBLock,
   Description,
   Rate,
   Name,
   Character,
-} from "./MoviePageActors.style";
+} from "./Actors.style";
 
 SwiperCore.use([Virtual, EffectCoverflow, Pagination]);
 
-export const MoviePageActors = ({ movie_id }) => {
+export const Actors = ({ movie_id }) => {
   const [actors, setActors] = useState([]);
   const filters = useSelector((store) => store.filters);
 
@@ -50,8 +51,8 @@ export const MoviePageActors = ({ movie_id }) => {
 
   return (
     <>
-      <ActorsTitle>Actors</ActorsTitle>
-      <ActorsWrapper>
+      <Title title="Actors"></Title>
+      <Wrapper>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -66,29 +67,28 @@ export const MoviePageActors = ({ movie_id }) => {
           }}
           pagination={{
             clickable: true,
+            dynamicBullets: true,
           }}
           breakpoints={{
             500: {
               slidesPerView: 2,
-              spaceBetweenSlides: 0,
             },
             1000: {
               slidesPerView: 3,
-              spaceBetweenSlides: 0,
             },
           }}
         >
           {actors.map((actor, index) => {
             return (
               <SwiperSlide key={actor.id} virtualIndex={index}>
-                <ActorCotainer>
-                  <ActorImage
+                <Cotainer>
+                  <Image
                     src={
                       actor.profile_path
                         ? `${API_IMG_URL}${actor.profile_path}`
                         : defaultPoster
                     }
-                  ></ActorImage>
+                  ></Image>
                   <FillingBLock>
                     <Rate vote_avarage={actor.popularity}>
                       {String(actor.popularity).slice(0, 4)}
@@ -98,12 +98,16 @@ export const MoviePageActors = ({ movie_id }) => {
                       <Character>Роль - {actor.character}</Character>
                     </Description>
                   </FillingBLock>
-                </ActorCotainer>
+                </Cotainer>
               </SwiperSlide>
             );
           })}
         </Swiper>
-      </ActorsWrapper>
+      </Wrapper>
     </>
   );
+};
+
+Actors.propTypes = {
+  movie_id: PropTypes.number,
 };

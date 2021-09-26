@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import queryString from "query-string";
+
 import { API_URL, API_KEY_MOVIE_DB_V3 } from "../../utils/apies";
 import { MovieItem } from "./MovieItem";
 import { Loader } from "../../elements/Loader";

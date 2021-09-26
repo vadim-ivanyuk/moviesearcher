@@ -2,18 +2,12 @@ import styled from "styled-components";
 import { theme } from "../../../theme";
 import { addBorderForVoteAvarage } from "../../../utils/helpers";
 
-export const ActorsTitle = styled.h2`
-  width: 100%;
-  margin: 15px 0px;
-  font-size: 30px;
-`;
-
-export const ActorsWrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   display: flex;
 `;
 
-export const ActorCotainer = styled.div`
+export const Cotainer = styled.div`
   position: relative;
   width: 370px;
   height: 450px;
@@ -23,7 +17,7 @@ export const ActorCotainer = styled.div`
   }
 `;
 
-export const ActorImage = styled.img`
+export const Image = styled.img`
   width: 100%;
   height: 450px;
   object-fit: cover;
