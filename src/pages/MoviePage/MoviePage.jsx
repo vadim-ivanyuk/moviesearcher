@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import queryString from "query-string";
 import axios from "axios";
-import { API_URL, API_KEY_MOVIE_DB_V3 } from "../../utils/apies";
-import { MoviePageHeader } from "./MoviePageHeader";
-import { MoviePageTrailers } from "./MoviePageTrailers";
 
-const getMovieParams = (params) => ({
-  language: params.language,
-  api_key: API_KEY_MOVIE_DB_V3,
-});
+import { API_URL, API_KEY_MOVIE_DB_V3 } from "../../utils/apies";
+
+import { MoviePageHeader } from "./components/MoviePageHeader";
+import { MoviePageTrailers } from "./components/MoviePageTrailers";
+import { MoviePageActors } from "./components/MoviePageActors";
+
+import { MoviePageWrapper, MoviePageContainer } from "./MoviePage.style";
 
 export const MoviePage = (props) => {
   const [movie, setMovie] = useState({});
@@ -20,9 +19,7 @@ export const MoviePage = (props) => {
   useEffect(() => {
     axios
       .get(
-        `${API_URL}/movie/${id}?${queryString.stringify(
-          getMovieParams(filters)
-        )}`
+        `${API_URL}/movie/${id}?api_key=${API_KEY_MOVIE_DB_V3}&language=${filters.language}`
       )
       .then(({ data }) => {
         setMovie(data);
@@ -33,9 +30,14 @@ export const MoviePage = (props) => {
   }, []);
 
   return (
-    <div>
+    <>
       <MoviePageHeader movie={movie} />
-      <MoviePageTrailers movie_id={movie.id} />
-    </div>
+      <MoviePageWrapper>
+        <MoviePageContainer>
+          <MoviePageTrailers movie_id={movie.id} />
+          <MoviePageActors movie_id={movie.id} />
+        </MoviePageContainer>
+      </MoviePageWrapper>
+    </>
   );
 };

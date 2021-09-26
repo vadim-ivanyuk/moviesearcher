@@ -2,14 +2,16 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import axios from "axios";
+
 import {
   API_URL,
   API_YOUTUBE_EMBED_URL,
   API_KEY_MOVIE_DB_V3,
-} from "../../utils/apies";
+} from "../../../utils/apies";
+
+import { Player } from "./Player";
+
 import {
-  TrailersWrapper,
-  TrailersContainer,
   TrailersTitle,
   FlexWrapper,
   CurrentTrailerWrapper,
@@ -19,7 +21,6 @@ import {
   IrameListItemOverBlock,
   LoadMore,
 } from "./MoviePageTrailers.style";
-import { Player } from "./Player";
 
 export const MoviePageTrailers = ({ movie_id }) => {
   const [trailers, setTrailers] = useState([]);
@@ -87,30 +88,28 @@ export const MoviePageTrailers = ({ movie_id }) => {
   });
 
   return (
-    <Fragment>
+    <>
       {trailers.length > 0 && (
-        <TrailersWrapper>
-          <TrailersContainer>
-            <TrailersTitle>Trailers</TrailersTitle>
-            <FlexWrapper>
-              <CurrentTrailerWrapper trailersLength={trailers.length}>
-                {currentTrailer}
-              </CurrentTrailerWrapper>
-              {trailers.length > 1 && (
-                <TrailersList>
-                  {trailersList}
-                  {trailers.length > availableTrailers && (
-                    <LoadMore onClick={changeAvailableTrailers}>
-                      load more
-                    </LoadMore>
-                  )}
-                </TrailersList>
-              )}
-            </FlexWrapper>
-          </TrailersContainer>
-        </TrailersWrapper>
+        <>
+          <TrailersTitle>Trailers</TrailersTitle>
+          <FlexWrapper>
+            <CurrentTrailerWrapper trailersLength={trailers.length}>
+              {currentTrailer}
+            </CurrentTrailerWrapper>
+            {trailers.length > 1 && (
+              <TrailersList>
+                {trailersList}
+                {trailers.length > availableTrailers && (
+                  <LoadMore onClick={changeAvailableTrailers}>
+                    load more
+                  </LoadMore>
+                )}
+              </TrailersList>
+            )}
+          </FlexWrapper>
+        </>
       )}
-    </Fragment>
+    </>
   );
 };
 

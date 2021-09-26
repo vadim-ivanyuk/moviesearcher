@@ -32,7 +32,7 @@ function AuthorizationForm(props) {
           label="Повторите пароль"
           validate={[required, minLength, indentPassword]}
         />
-        <button type="submit" className="btn btn-success w-100 mt-2 mb-3">
+        <button type="submit" className="btn btn-dark w-100 mt-2 mb-3">
           Отправить
         </button>
       </form>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { API_YOUTUBE_URL, API_YOUTUBE_HOST_URL } from "../../utils/apies";
-import { Loader } from "../../elements/Loader";
+import { API_YOUTUBE_URL, API_YOUTUBE_HOST_URL } from "../../../utils/apies";
+import { Loader } from "../../../elements/Loader";
+
 import { PlayerContainer, LoaderWrapper } from "./Player.style";
 
 export const Player = (props) => {

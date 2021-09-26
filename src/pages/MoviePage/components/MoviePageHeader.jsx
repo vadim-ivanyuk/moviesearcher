@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { API_IMG_URL, API_IMG_URL_W1920 } from "../../utils/apies";
-import { convertReleaseDate } from "../../utils/helpers";
-import defaultBackdropImage from "../../img/not-found-backdrop.jpg";
-import defaultPosterImage from "../../img/not-found-poster.jpg";
+
+import { API_IMG_URL, API_IMG_URL_W1920 } from "../../../utils/apies";
+import { convertReleaseDate } from "../../../utils/helpers";
+import { defaultPoster, defaultBackdropImage } from "../../../img";
+
 import {
   MovieHeader,
   MovieHeaderBackground,
@@ -39,11 +40,7 @@ const getBackgropImage = (movie) => {
     return defaultBackdropImage;
   }
 
-  const path = movie.belongs_to_collection
-    ? movie.belongs_to_collection.backdrop_path
-    : movie.backdrop_path;
-
-  return `${API_IMG_URL_W1920}${path}`;
+  return `${API_IMG_URL_W1920}${movie.backdrop_path}`;
 };
 
 export const MoviePageHeader = (props) => {
@@ -61,7 +58,7 @@ export const MoviePageHeader = (props) => {
               src={
                 movie.poster_path
                   ? `${API_IMG_URL}${movie.poster_path}`
-                  : defaultPosterImage
+                  : defaultPoster
               }
               alt=""
             />

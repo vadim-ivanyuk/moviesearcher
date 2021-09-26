@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Header } from "./components/Header";
 import { MoviesPage } from "./pages/MoviesPage";
 import { MoviePage } from "./pages/MoviePage";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
 
         <Redirect to="/" />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };

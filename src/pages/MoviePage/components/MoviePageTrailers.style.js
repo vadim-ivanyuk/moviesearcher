@@ -1,19 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme";
-
-export const TrailersWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: auto;
-`;
-
-export const TrailersContainer = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0px 20px;
-`;
+import { theme } from "../../../theme";
 
 export const TrailersTitle = styled.h2`
   width: 100%;

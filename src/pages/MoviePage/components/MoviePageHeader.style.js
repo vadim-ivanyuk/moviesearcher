@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { theme } from "../../theme";
-import { addBorderForVoteAvarage } from "../../utils/helpers";
+import { theme } from "../../../theme";
+import { addBorderForVoteAvarage } from "../../../utils/helpers";
 
 export const MovieHeader = styled.div`
   position: relative;
