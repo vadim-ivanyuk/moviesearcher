@@ -75,7 +75,7 @@ export const MoreInfo = ({ movie }) => {
             <strong>Продолжительность:</strong> {movie.runtime}m
           </Paragraph>
           <Paragraph>
-            <a href={movie.homepage} target="_blank" rel="nofollow">
+            <a href={movie.homepage} target="_blank" rel="noopener noreferrer">
               Посетить домашнюю страницу
             </a>
           </Paragraph>
@@ -97,7 +97,7 @@ export const MoreInfo = ({ movie }) => {
               <a
                 href={`https://www.facebook.com/${socialLinks.facebook_id}`}
                 target="_blank"
-                rel="nofollow"
+                rel="noopener noreferrer"
               >
                 <img src={facebook} alt="facebook icon" />
               </a>
@@ -106,7 +106,7 @@ export const MoreInfo = ({ movie }) => {
               <a
                 href={`https://www.instagram.com/${socialLinks.instagram_id}`}
                 target="_blank"
-                rel="nofollow"
+                rel="noopener noreferrer"
               >
                 <img src={instagram} alt="instagram icon" />
               </a>
@@ -115,7 +115,7 @@ export const MoreInfo = ({ movie }) => {
               <a
                 href={`https://twitter.com/${socialLinks.twitter_id}`}
                 target="_blank"
-                rel="nofollow"
+                rel="noopener noreferrer"
               >
                 <img src={twitter} alt="twitter icon" />
               </a>
@@ -124,12 +124,9 @@ export const MoreInfo = ({ movie }) => {
               <a
                 href={`https://www.imdb.com/title/${socialLinks.imdb_id}`}
                 target="_blank"
-                rel="nofollow"
+                rel="noopener noreferrer"
               >
-                <img
-                  src={imdb}
-                  alt="imdb icon"
-                />
+                <img src={imdb} alt="imdb icon" />
               </a>
             </SocialLinksItem>
           </SocialLinks>
