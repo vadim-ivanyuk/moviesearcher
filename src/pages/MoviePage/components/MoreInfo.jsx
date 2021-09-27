@@ -51,7 +51,6 @@ export const MoreInfo = ({ movie }) => {
         ])
         .then((data) => {
           setKeywords(data[0].data.keywords);
-          console.log(data[1].data);
           setSocialLinks(data[1].data);
         })
         .catch((error) => {

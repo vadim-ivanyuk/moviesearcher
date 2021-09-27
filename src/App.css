@@ -201,3 +201,12 @@ a:hover {
     display: none;
   }
 }
+
+
+.mySwiper .swiper-pagination {
+  bottom: 0px !important;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  background: #daa520;
+}

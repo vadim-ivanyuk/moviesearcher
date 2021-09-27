@@ -7,7 +7,7 @@ import { PlayerContainer, LoaderWrapper } from "./Player.style";
 
 export const Player = (props) => {
   const [readyTrailer, setReadyTrailer] = useState(false);
-  const { id, autoplay = 0 } = props;
+  const { id } = props;
   let player;
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export const Player = (props) => {
     });
   };
 
-  const onPlayerReady = (e) => {
+  const onPlayerReady = () => {
     setReadyTrailer(true);
   };
 

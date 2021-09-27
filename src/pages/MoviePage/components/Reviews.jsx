@@ -22,6 +22,7 @@ export const Reviews = ({ movie_id }) => {
         )
         .then(({ data }) => {
           setReviews(data.results);
+          console.log(data)
         })
         .catch((error) => {
           console.warn(error);

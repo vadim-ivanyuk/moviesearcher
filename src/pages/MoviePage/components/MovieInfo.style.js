@@ -137,7 +137,7 @@ export const VoteAvarage = styled.p`
   font-size: 14px;
   font-weight: 600;
   border: 3px inset
-    ${({ vote_avarage }) => addBorderForVoteAvarage(vote_avarage)};
+    ${({ vote_average }) => addBorderForVoteAvarage(vote_average)};
   border-radius: 50%;
   margin: 0px;
 `;

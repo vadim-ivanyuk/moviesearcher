@@ -77,6 +77,7 @@ export const Actors = ({ movie_id }) => {
               slidesPerView: 3,
             },
           }}
+          className="mySwiper"
         >
           {actors.map((actor, index) => {
             return (

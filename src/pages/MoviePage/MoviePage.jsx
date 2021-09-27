@@ -8,15 +8,15 @@ import { MovieInfo } from "./components/MovieInfo";
 import { Trailers } from "./components/Trailers";
 import { MoreInfo } from "./components/MoreInfo";
 import { Actors } from "./components/Actors";
+import { SimilarMovies } from "./components/SimilarMovies";
 import { Reviews } from "./components/Reviews";
 
 import { MoviePageWrapper, MoviePageContainer } from "./MoviePage.style";
 
-export const MoviePage = (props) => {
+export const MoviePage = ({ match }) => {
   const [movie, setMovie] = useState({});
   const filters = useSelector((store) => store.filters);
-
-  const { id } = props.match.params;
+  const { id } = match.params;
 
   useEffect(() => {
     axios
@@ -29,7 +29,7 @@ export const MoviePage = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -43,6 +43,7 @@ export const MoviePage = (props) => {
       <MoviePageWrapper>
         <MoviePageContainer>
           <Actors movie_id={movie.id} />
+          <SimilarMovies movie_id={movie.id} />
           <Reviews movie_id={movie.id} />
         </MoviePageContainer>
       </MoviePageWrapper>

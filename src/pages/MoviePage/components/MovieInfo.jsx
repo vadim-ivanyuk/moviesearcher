@@ -67,7 +67,7 @@ export const MovieInfo = (props) => {
             <Title>{movie.title}</Title>
             {movie.tagline && <TagLine>{movie.tagline}</TagLine>}
             <VoteAvarageContainer>
-              <VoteAvarage vote_avarage={movie.vote_average}>
+              <VoteAvarage vote_average={movie.vote_average}>
                 {String(movie.vote_average).length === 1
                   ? `${movie.vote_average}.0`
                   : movie.vote_average}
