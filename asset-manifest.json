@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/moviesearcher/static/css/main.7c93868a.chunk.css",
-    "main.js": "/moviesearcher/static/js/main.aa43439c.chunk.js",
-    "main.js.map": "/moviesearcher/static/js/main.aa43439c.chunk.js.map",
+    "main.css": "/moviesearcher/static/css/main.eb704b05.chunk.css",
+    "main.js": "/moviesearcher/static/js/main.ec728508.chunk.js",
+    "main.js.map": "/moviesearcher/static/js/main.ec728508.chunk.js.map",
     "runtime-main.js": "/moviesearcher/static/js/runtime-main.2fc7d061.js",
     "runtime-main.js.map": "/moviesearcher/static/js/runtime-main.2fc7d061.js.map",
-    "static/css/2.ff645aaf.chunk.css": "/moviesearcher/static/css/2.ff645aaf.chunk.css",
-    "static/js/2.c74a2187.chunk.js": "/moviesearcher/static/js/2.c74a2187.chunk.js",
-    "static/js/2.c74a2187.chunk.js.map": "/moviesearcher/static/js/2.c74a2187.chunk.js.map",
+    "static/css/2.9d6b8cce.chunk.css": "/moviesearcher/static/css/2.9d6b8cce.chunk.css",
+    "static/js/2.3f96555e.chunk.js": "/moviesearcher/static/js/2.3f96555e.chunk.js",
+    "static/js/2.3f96555e.chunk.js.map": "/moviesearcher/static/js/2.3f96555e.chunk.js.map",
     "index.html": "/moviesearcher/index.html",
-    "precache-manifest.7c42e57acf4033a38f8099454874ec27.js": "/moviesearcher/precache-manifest.7c42e57acf4033a38f8099454874ec27.js",
+    "precache-manifest.d80642c0999e0adee725121395fdb00f.js": "/moviesearcher/precache-manifest.d80642c0999e0adee725121395fdb00f.js",
     "service-worker.js": "/moviesearcher/service-worker.js",
-    "static/css/2.ff645aaf.chunk.css.map": "/moviesearcher/static/css/2.ff645aaf.chunk.css.map",
-    "static/css/main.7c93868a.chunk.css.map": "/moviesearcher/static/css/main.7c93868a.chunk.css.map",
-    "static/js/2.c74a2187.chunk.js.LICENSE.txt": "/moviesearcher/static/js/2.c74a2187.chunk.js.LICENSE.txt",
+    "static/css/2.9d6b8cce.chunk.css.map": "/moviesearcher/static/css/2.9d6b8cce.chunk.css.map",
+    "static/css/main.eb704b05.chunk.css.map": "/moviesearcher/static/css/main.eb704b05.chunk.css.map",
+    "static/js/2.3f96555e.chunk.js.LICENSE.txt": "/moviesearcher/static/js/2.3f96555e.chunk.js.LICENSE.txt",
     "static/media/not-found-backdrop.jpg": "/moviesearcher/static/media/not-found-backdrop.3ebae8b0.jpg",
     "static/media/not-found-poster.jpg": "/moviesearcher/static/media/not-found-poster.491cf8e5.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2fc7d061.js",
-    "static/css/2.ff645aaf.chunk.css",
-    "static/js/2.c74a2187.chunk.js",
-    "static/css/main.7c93868a.chunk.css",
-    "static/js/main.aa43439c.chunk.js"
+    "static/css/2.9d6b8cce.chunk.css",
+    "static/js/2.3f96555e.chunk.js",
+    "static/css/main.eb704b05.chunk.css",
+    "static/js/main.ec728508.chunk.js"
   ]
 }
