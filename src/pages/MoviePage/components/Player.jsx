@@ -5,10 +5,11 @@ import { Loader } from "../../../elements/Loader";
 
 import { PlayerContainer, LoaderWrapper } from "./Player.style";
 
+let player;
+
 export const Player = (props) => {
   const [readyTrailer, setReadyTrailer] = useState(false);
   const { id } = props;
-  let player;
 
   useEffect(() => {
     if (!window.YT) {

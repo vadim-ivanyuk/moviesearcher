@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, { EffectCoverflow } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
@@ -28,7 +28,7 @@ import {
   Character,
 } from "./Actors.style";
 
-SwiperCore.use([Virtual, EffectCoverflow, Pagination]);
+SwiperCore.use([Virtual, EffectCoverflow]);
 
 export const Actors = ({ movie_id }) => {
   const [actors, setActors] = useState([]);
@@ -64,10 +64,6 @@ export const Actors = ({ movie_id }) => {
             depth: 100,
             modifier: 1,
             slideShadows: true,
-          }}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
           }}
           breakpoints={{
             500: {

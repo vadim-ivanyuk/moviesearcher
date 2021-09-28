@@ -19,6 +19,8 @@ export const MoviePage = ({ match }) => {
   const { id } = match.params;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     axios
       .get(
         `${API_URL}/movie/${id}?api_key=${API_KEY_MOVIE_DB_V3}&language=${filters.language}`
