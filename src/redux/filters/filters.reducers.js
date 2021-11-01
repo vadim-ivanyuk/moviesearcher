@@ -1,14 +1,12 @@
-import { handleActions } from "redux-actions";
-
-import { ON_CHANGE_FILTERS, RESET_FILTERS } from "./filters.types";
+import { handleActions } from 'redux-actions';
 
 const initialState = {
-  sort_by: "popularity.desc",
+  sort_by: 'popularity.desc',
   primary_release_year: `${new Date().getFullYear()}`,
   with_genres: [],
   page: 1,
   total_pages: 500,
-  language: "ru-RU",
+  language: 'ru-RU',
 };
 
 export const filtersReducer = handleActions(
@@ -19,7 +17,6 @@ export const filtersReducer = handleActions(
         [payload.name]: payload.value,
       };
     },
-    RESET_FILTERS: (store) => (store = initialState),
   },
   initialState
 );

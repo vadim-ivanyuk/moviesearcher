@@ -1,19 +1,8 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { resetFilters } from "../../redux";
+import React from 'react';
 
 export const ResetFilters = () => {
-  const dispatch = useDispatch();
-
-  const handelResetFilters = () => {
-    dispatch(resetFilters());
-  };
-
   return (
-    <button
-      className="btn btn-light col-12 mt-3 reset-filters"
-      onClick={handelResetFilters}
-    >
+    <button className='btn btn-light col-12 mt-3 reset-filters'>
       Сбросить фильтры
     </button>
   );

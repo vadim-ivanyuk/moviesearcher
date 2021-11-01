@@ -1,16 +1,16 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import PropTypes from "prop-types";
-import axios from "axios";
+import React, { Fragment, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import {
   API_URL,
   API_YOUTUBE_EMBED_URL,
   API_KEY_MOVIE_DB_V3,
-} from "../../../utils/apies";
+} from '../../../utils/apies';
 
-import { Title } from "../../../elements";
-import { Player } from "./Player";
+import { Title } from '../../../elements';
+import { Player } from './Player';
 
 import {
   FlexWrapper,
@@ -20,7 +20,7 @@ import {
   IframeListItem,
   IrameListItemOverBlock,
   LoadMore,
-} from "./Trailers.style";
+} from './Trailers.style';
 
 export const Trailers = ({ movie_id }) => {
   const [trailers, setTrailers] = useState([]);
@@ -45,7 +45,7 @@ export const Trailers = ({ movie_id }) => {
         .catch((error) => {
           console.warn(error);
         });
-  }, [movie_id]);
+  }, [movie_id, filters.language]);
 
   const changeActiveTrailer = (key) => () => {
     setActiveTrailer(key);
@@ -74,8 +74,8 @@ export const Trailers = ({ movie_id }) => {
           <IframeListItemWrapper>
             <IframeListItem
               src={`${API_YOUTUBE_EMBED_URL}${trailer.key}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
             ></IframeListItem>
             <IrameListItemOverBlock
@@ -91,7 +91,7 @@ export const Trailers = ({ movie_id }) => {
     <>
       {trailers.length > 0 && (
         <>
-          <Title title="Trailers"></Title>
+          <Title title='Trailers'></Title>
           <FlexWrapper>
             <CurrentTrailerWrapper trailersLength={trailers.length}>
               {currentTrailer}

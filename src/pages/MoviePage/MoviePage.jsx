@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 
-import { API_URL, API_KEY_MOVIE_DB_V3 } from "../../utils/apies";
+import { API_URL, API_KEY_MOVIE_DB_V3 } from '../../utils/apies';
 
-import { MovieInfo } from "./components/MovieInfo";
-import { Trailers } from "./components/Trailers";
-import { MoreInfo } from "./components/MoreInfo";
-import { Actors } from "./components/Actors";
-import { SimilarMovies } from "./components/SimilarMovies";
-import { Reviews } from "./components/Reviews";
+import { MovieInfo } from './components/MovieInfo';
+import { Trailers } from './components/Trailers';
+import { MoreInfo } from './components/MoreInfo';
+import { Actors } from './components/Actors';
+import { SimilarMovies } from './components/SimilarMovies';
+import { Reviews } from './components/Reviews';
 
-import { MoviePageWrapper, MoviePageContainer } from "./MoviePage.style";
+import { MoviePageWrapper, MoviePageContainer } from './MoviePage.style';
 
 export const MoviePage = ({ match }) => {
   const [movie, setMovie] = useState({});
@@ -31,7 +31,7 @@ export const MoviePage = ({ match }) => {
       .catch((error) => {
         console.log(error);
       });
-  }, [id]);
+  }, [id, filters.language]);
 
   return (
     <>

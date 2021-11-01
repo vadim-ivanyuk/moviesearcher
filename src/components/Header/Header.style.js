@@ -19,7 +19,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 100%;
   max-width: 1140px;
-  padding: 0px 30px;
+  padding: 0px 20px;
   margin: 0 auto;
   display: flex;
   align-items: center;

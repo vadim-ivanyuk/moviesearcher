@@ -47,7 +47,7 @@ export const Actors = ({ movie_id }) => {
           console.warn(error);
         });
     }
-  }, [movie_id]);
+  }, [movie_id, filters.language]);
 
   return (
     <>

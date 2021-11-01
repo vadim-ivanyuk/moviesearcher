@@ -57,7 +57,7 @@ export const MoreInfo = ({ movie }) => {
           console.warn(error);
         });
     }
-  }, [movie.id]);
+  }, [movie.id, filters]);
 
   return (
     <Wrapper>

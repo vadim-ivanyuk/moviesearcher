@@ -5,8 +5,6 @@ import { Loader } from "../../../elements/Loader";
 
 import { PlayerContainer, LoaderWrapper } from "./Player.style";
 
-let player;
-
 export const Player = (props) => {
   const [readyTrailer, setReadyTrailer] = useState(false);
   const { id } = props;
@@ -26,7 +24,7 @@ export const Player = (props) => {
   }, [id]);
 
   const loadVideo = () => {
-    player = new window.YT.Player(`player-${id}`, {
+    new window.YT.Player(`player-${id}`, {
       videoId: id,
       width: "100%",
       height: "100%",
