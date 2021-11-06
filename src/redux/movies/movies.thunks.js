@@ -2,6 +2,7 @@ import axios from 'axios';
 import queryString from 'query-string';
 
 import { getMoviesAction, searchingMoviesAction } from './movies.actions';
+import { setTotalPages } from '../filters/filters.actions';
 
 import { API_URL, API_KEY_MOVIE_DB_V3 } from '../../utils/apies';
 
@@ -21,6 +22,7 @@ export const getMovies = () => (dispatch, getState) => {
     .get(`${API_URL}/discover/movie?${queryString.stringify(params)}`)
     .then(({ data }) => {
       dispatch(getMoviesAction(data.results));
+      dispatch(setTotalPages(data.total_pages));
     })
     .catch((error) => console.log(error));
 };
@@ -32,15 +34,17 @@ export const searchingMovies = (searchParams) => (dispatch, getState) => {
     api_key: API_KEY_MOVIE_DB_V3,
     language: filters.language,
     query: String(searchParams),
+    page: filters.page,
   };
 
   if (!searchParams.length) {
-      dispatch(getMovies())
+    dispatch(getMovies());
   } else {
     axios
       .get(`${API_URL}/search/movie?${queryString.stringify(params)}`)
       .then(({ data }) => {
         dispatch(searchingMoviesAction(data.results));
+        dispatch(setTotalPages(data.total_pages));
       })
       .catch((error) => console.log(error));
   }

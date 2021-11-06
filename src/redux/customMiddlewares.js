@@ -1,5 +1,6 @@
 import { ON_CHANGE_FILTERS } from './filters/filters.types';
-import { getMovies } from './movies/movies.thunks';
+import { GET_MOVIES, SEARCHING_MOVIES } from './movies/movies.types';
+import { getMovies, searchingMovies } from './movies/movies.thunks';
 
 export const onChangePageMiddleware =
   ({ dispatch, getState }) =>
@@ -24,12 +25,18 @@ export const onChangePageMiddleware =
   };
 
 export const getMoviesWithChangedFilters =
-  ({ dispatch }) =>
+  ({ dispatch, getState }) =>
   (next) =>
   (action) => {
     next(action);
-    
+
     if (action.type === ON_CHANGE_FILTERS) {
-      dispatch(getMovies());
+      const { filters } = getState();
+
+      if (filters.searchParams) {
+        dispatch(searchingMovies(filters.searchParams));
+      } else {
+        dispatch(getMovies());
+      }
     }
   };

@@ -1,26 +1,41 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 import { useInput } from '../../hooks';
 
-import { getMovies, searchingMovies } from '../../redux/movies/movies.thunks';
+import { setSearchParams, setFirstPage } from '../../redux/filters/filters.actions';
+import { useFilters } from '../../redux/selectors';
 
 import { SearchWrapper, Input, SearchButton } from './Search.style';
 
 export const Search = () => {
+  const filters = useSelector(useFilters);
   const search = useInput();
   const dispatch = useDispatch();
+  const history = useHistory();
   const { value, isFirstRender } = search;
 
   useEffect(() => {
+    search.setValue(filters.searchParams);
+  }, [filters.searchParams]);
+
+  useEffect(() => {
     if (!value.length && !isFirstRender.current) {
-      dispatch(getMovies());
+      dispatch(setFirstPage());
+      dispatch(setSearchParams(''));
+
+      history.push('/');
     }
-  }, [value, dispatch, isFirstRender]);
+  }, [value, dispatch, isFirstRender, history]);
 
   const searching = (e) => {
     e.preventDefault();
 
-    dispatch(searchingMovies(value));
+    dispatch(setFirstPage());
+    dispatch(setSearchParams(value));
+
+    history.push(`/${value}`);
   };
 
   return (

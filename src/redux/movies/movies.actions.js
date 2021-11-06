@@ -6,6 +6,6 @@ export const getMoviesAction = (movies) => ({
 });
 
 export const searchingMoviesAction = (movies) => ({
-  type: types.FOUNDED_MOVIES,
+  type: types.SEARCHING_MOVIES,
   payload: movies,
 });

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const FiltersWrapper = styled.div`
-  width: 240px;
+  width: 300px;
 `;

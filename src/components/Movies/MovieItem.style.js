@@ -8,7 +8,7 @@ export const MovieItemWrapper = styled.div`
   height: 375px;
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  margin: 5px;
+  margin: 10px;
   margin-bottom: 20px;
   border-radius: 0 0 5px 5px;
   background: ${theme.colorWhite};

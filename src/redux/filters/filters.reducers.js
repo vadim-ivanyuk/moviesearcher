@@ -1,4 +1,4 @@
-import { handleActions } from 'redux-actions';
+import * as types from './filters.types';
 
 const initialState = {
   sort_by: 'popularity.desc',
@@ -7,16 +7,20 @@ const initialState = {
   page: 1,
   total_pages: 500,
   language: 'ru-RU',
+  searchParams: '',
 };
 
-export const filtersReducer = handleActions(
-  {
-    ON_CHANGE_FILTERS: (store, { payload }) => {
-      return {
-        ...store,
-        [payload.name]: payload.value,
-      };
-    },
-  },
-  initialState
-);
+export const filtersReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case types.ON_CHANGE_FILTERS:
+      return { ...state, [payload.name]: payload.value };
+    case types.SET_SEARCH_PARAMS:
+      return { ...state, searchParams: payload };
+    case types.SET_TOTAL_PAGES:
+      return { ...state, total_pages: payload };
+    case types.SET_FIRST_PAGE:
+      return { ...state, page: 1 };
+    default:
+      return state;
+  }
+};

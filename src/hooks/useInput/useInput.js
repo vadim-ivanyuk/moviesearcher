@@ -14,6 +14,7 @@ export const useInput = (initial = '') => {
     reset: () => {
       setValue('');
     },
+    setValue,
     isFirstRender,
   };
 };

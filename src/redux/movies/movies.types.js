@@ -1,2 +1,2 @@
 export const GET_MOVIES = 'GET_MOVIES';
-export const FOUNDED_MOVIES = 'FOUNDED_MOVIES';
+export const SEARCHING_MOVIES = 'SEARCHING_MOVIES';

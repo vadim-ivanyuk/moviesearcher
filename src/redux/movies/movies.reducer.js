@@ -9,7 +9,7 @@ export const moviesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case types.GET_MOVIES:
       return { ...state, activeMovies: payload };
-    case types.FOUNDED_MOVIES:
+    case types.SEARCHING_MOVIES:
       return { ...state, activeMovies: payload };
     default:
       return state;

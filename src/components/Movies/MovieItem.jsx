@@ -16,9 +16,9 @@ import {
   Release,
 } from "./MovieItem.style";
 
-export const MovieItem = ({ movie }) => {
+export const MovieItem = ({ movie, id = false }) => {
   return (
-    <MovieItemWrapper>
+    <MovieItemWrapper id={id.toString()}>
       <Poster>
         <Link to={`/movie/${movie.id}`}>
           <PosterImage
